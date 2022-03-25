@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+	background-color: #eeeeee;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+.teams {
+	display: flex;
+	flex-direction: row;
+	margin: 8px;
+}
+
+.team {
+	padding: 16px;
+	background-color: #dddddd;
+	border-radius: 6px;
+	margin-right: 8px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	transition: background-color .3s;
+	text-align: center;
+	cursor: pointer;
+}
+
+.team:hover {
+	background-color: #cccccc;
+}
+
+.team.selected {
+	background-color: #cccccc;
+}
+
+.team:last-child {
+	margin-right: 0;
+}
+
+.rooms {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 8px;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.room {
+	flex-basis: 30%;
+	flex-grow: 1;
+	padding: 16px 16px;
+	background-color: #dddddd;
+	border-radius: 6px;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color .3s;
+}
+
+.room.full {
+	flex-basis: 100%;
+	cursor: default;
+}
+
+.room:hover {
+	background-color: #cccccc;
+}
+
+.room.full:hover {
+	background-color: #dddddd;
+}
+
+.room.locked {
+	background-color: #cccccc;
+}
+
+.name {
+	font-size: 18px;
+}
