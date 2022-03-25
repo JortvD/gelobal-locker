@@ -10,7 +10,12 @@ class Application {
 	constructor() {
 		this.server = http.createServer((req, res) => this.handle(req, res));
 		this.socketServer = http.createServer();
-		this.io = socketio(this.socketServer);
+		this.io = socketio(this.socketServer, {
+			cors: {
+				origin: "http://locking.jortvd.nl",
+				methods: ["GET", "POST"]
+			}
+		});
 		this.clients = [];
 		this.io.on('connection', client => {
 			this.clients.push(client);
